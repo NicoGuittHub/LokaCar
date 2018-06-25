@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".client.SaisieClient"></activity>
+        <activity android:name=".Vehicule.SaisieVehicule"></activity>
     </application>
 
 </manifest>
