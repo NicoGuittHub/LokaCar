@@ -24,12 +24,12 @@
         android:layout_marginStart="176dp"
         android:text="Ok"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/loue"
-        app:layout_constraintTop_toBottomOf="@+id/loue"
+        app:layout_constraintStart_toEndOf="@+id/location"
+        app:layout_constraintTop_toBottomOf="@+id/location"
         app:layout_constraintVertical_bias="0.837" />
 
-    <CheckBox
-        android:id="@+id/loue"
+    <ToggleButton
+        android:id="@+id/location"
         android:layout_width="86dp"
         android:layout_height="37dp"
         android:layout_marginTop="76dp"
@@ -80,5 +80,6 @@
         android:text="€"
         app:layout_constraintTop_toBottomOf="@+id/modele"
         tools:layout_editor_absoluteX="29dp" />
+
 
 </android.support.constraint.ConstraintLayout>
