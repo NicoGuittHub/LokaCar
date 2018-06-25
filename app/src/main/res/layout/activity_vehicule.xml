@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/buttonSaisieVehicule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saisie véhicule"
+        android:onClick="activity_saisie_vehicule"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="77dp" />
+
+    <Button
+        android:id="@+id/button_liste_vehicules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Liste véhicules"
+        android:onClick="activity_liste_vehicules"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="167dp" />
+</android.support.constraint.ConstraintLayout>
