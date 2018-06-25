@@ -6,11 +6,10 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="LokaCar"
+        android:parentActivityName="com.exemple.MainActivity"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:parentActivityName="com.exemple.MainActivity"
-        >
+        android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,8 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".client.SaisieClient"></activity>
-        <activity android:name=".Vehicule.SaisieVehicule"></activity>
+        <activity android:name=".client.SaisieClient" />
+        <activity android:name=".Vehicule.SaisieVehicule" />
+        <activity android:name=".client.ListeClient" />
+        <activity android:name=".client.ClientDetail"></activity>
     </application>
 
 </manifest>

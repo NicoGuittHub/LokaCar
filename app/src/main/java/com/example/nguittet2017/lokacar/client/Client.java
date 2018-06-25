@@ -2,15 +2,18 @@ package com.example.nguittet2017.lokacar.client;
 
 import android.net.Uri;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Client {
 
-    private String nomClient;
-    private String prenomClient;
-    private String telephoneClient;
-    private String adresseClient;
-    private String emailClient;
-    private Uri carteIdentiteClient;
-    private Uri permisClient;
+    public String nomClient;
+    public String prenomClient;
+    public String telephoneClient;
+    public String adresseClient;
+    public String emailClient;
+    public Uri carteIdentiteClient;
+    public Uri permisClient;
 
     public Client() {
     }
