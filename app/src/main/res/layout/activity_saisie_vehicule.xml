@@ -6,4 +6,79 @@
     android:layout_height="match_parent"
     tools:context=".Vehicule.SaisieVehicule">
 
+    <TextView
+        android:id="@+id/saisieVehicule"
+        android:layout_width="159dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="16dp"
+        android:text="Saisie d'un véhicule"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="29dp" />
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="176dp"
+        android:layout_marginStart="176dp"
+        android:text="Ok"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/loue"
+        app:layout_constraintTop_toBottomOf="@+id/loue"
+        app:layout_constraintVertical_bias="0.837" />
+
+    <CheckBox
+        android:id="@+id/loue"
+        android:layout_width="86dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="76dp"
+        android:text="Loué"
+        app:layout_constraintTop_toBottomOf="@+id/prix"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/immatriculation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="immatriculation"
+        app:layout_constraintTop_toBottomOf="@+id/saisieVehicule"
+        tools:layout_editor_absoluteX="29dp" />
+
+    <EditText
+        android:id="@+id/marque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="marque"
+        app:layout_constraintTop_toBottomOf="@+id/immatriculation"
+        tools:layout_editor_absoluteX="29dp" />
+
+    <EditText
+        android:id="@+id/modele"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="modèle"
+        app:layout_constraintTop_toBottomOf="@+id/marque"
+        tools:layout_editor_absoluteX="29dp" />
+
+    <EditText
+        android:id="@+id/prix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="€"
+        app:layout_constraintTop_toBottomOf="@+id/modele"
+        tools:layout_editor_absoluteX="29dp" />
+
 </android.support.constraint.ConstraintLayout>

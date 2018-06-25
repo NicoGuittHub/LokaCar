@@ -6,7 +6,7 @@ public class Client {
 
     private String nomClient;
     private String prenomClient;
-    private int telephoneClient;
+    private String telephoneClient;
     private String adresseClient;
     private String emailClient;
     private Uri carteIdentiteClient;
@@ -15,7 +15,15 @@ public class Client {
     public Client() {
     }
 
-    public Client(String nomClient, String prenomClient, int telephoneClient, String adresseClient, String emailClient, Uri carteIdentiteClient, Uri permisClient) {
+    public Client(String nomClient, String prenomClient, String telephoneClient, String adresseClient, String emailClient) {
+        this.nomClient = nomClient;
+        this.prenomClient = prenomClient;
+        this.telephoneClient = telephoneClient;
+        this.adresseClient = adresseClient;
+        this.emailClient = emailClient;
+    }
+
+    public Client(String nomClient, String prenomClient, String telephoneClient, String adresseClient, String emailClient, Uri carteIdentiteClient, Uri permisClient) {
         this.nomClient = nomClient;
         this.prenomClient = prenomClient;
         this.telephoneClient = telephoneClient;
@@ -41,11 +49,11 @@ public class Client {
         this.prenomClient = prenomClient;
     }
 
-    public int getTelephoneClient() {
+    public String getTelephoneClient() {
         return telephoneClient;
     }
 
-    public void setTelephoneClient(int telephoneClient) {
+    public void setTelephoneClient(String telephoneClient) {
         this.telephoneClient = telephoneClient;
     }
 
@@ -79,5 +87,16 @@ public class Client {
 
     public void setPermisClient(Uri permisClient) {
         this.permisClient = permisClient;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "nomClient='" + nomClient + '\'' +
+                ", prenomClient='" + prenomClient + '\'' +
+                ", telephoneClient='" + telephoneClient + '\'' +
+                ", adresseClient='" + adresseClient + '\'' +
+                ", emailClient='" + emailClient + '\'' +
+                '}';
     }
 }

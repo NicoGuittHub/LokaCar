@@ -11,12 +11,24 @@ public class Vehicule {
     private Uri photo;
     private boolean location;
 
+    public Vehicule(){
+
+    };
+
     public Vehicule(String immatriculation, String marque, String modele, double prix, Uri photo, boolean location) {
         this.immatriculation = immatriculation;
         this.marque = marque;
         this.modele = modele;
         this.prix = prix;
         this.photo = photo;
+        this.location = location;
+    }
+
+    public Vehicule(String immatriculation, String marque, String modele, double prix, boolean location) {
+        this.immatriculation = immatriculation;
+        this.marque = marque;
+        this.modele = modele;
+        this.prix = prix;
         this.location = location;
     }
 
@@ -68,5 +80,15 @@ public class Vehicule {
         this.location = location;
     }
 
-
+    @Override
+    public String toString() {
+        return "Vehicule{" +
+                "immatriculation='" + immatriculation + '\'' +
+                ", marque='" + marque + '\'' +
+                ", modele='" + modele + '\'' +
+                ", prix=" + prix +
+                ", photo=" + photo +
+                ", location=" + location +
+                '}';
+    }
 }
