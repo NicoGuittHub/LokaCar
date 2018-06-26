@@ -1,19 +1,17 @@
-package com.example.nguittet2017.lokacar.client;
+package com.example.nguittet2017.lokacar.Vehicule;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.os.Parcel;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.GestureDetector;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.nguittet2017.lokacar.MainActivity;
 import com.example.nguittet2017.lokacar.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,33 +25,33 @@ import org.parceler.Parcels;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListeClient extends AppCompatActivity implements RecyclerView.OnItemTouchListener {
+public class ListeVehicule extends AppCompatActivity implements RecyclerView.OnItemTouchListener{
 
     private static final String TAG = "kccImportbdd";
 
     public GestureDetector gestureDetector;
-    public List<Client> listeClients = new ArrayList<>();
-    public Client client;
+    public List<Vehicule> listeVehicules = new ArrayList<>();
+    public Vehicule vehicule;
     int position = 0;
-    public ClientAdapter clientAdapter;
+    public VehiculeAdapter vehiculeAdapter;
     public RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_liste_client);
+        setContentView(R.layout.activity_liste_vehicule);
         Log.i(TAG, "onCreate: ");
 
-        recyclerView = (RecyclerView) findViewById(R.id.liste_des_clients);
+        recyclerView = (RecyclerView) findViewById(R.id.liste_vehicules);
         recyclerView.setHasFixedSize(true);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        // recherche des clients
-        FirebaseFirestore dbClient = FirebaseFirestore.getInstance();
+        // recherche des vehicules
+        FirebaseFirestore dbVehicule = FirebaseFirestore.getInstance();
 
-        dbClient.collection("clients")
+        dbVehicule.collection("vehicules")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -62,21 +60,21 @@ public class ListeClient extends AppCompatActivity implements RecyclerView.OnIte
                             for (DocumentSnapshot document : task.getResult()) {
                                 try {
                                     JSONObject jsonObject = new JSONObject(document.getData());
-                                    client = new Client(jsonObject.getString("nomClient"),
-                                            jsonObject.getString("prenomClient"),
-                                            jsonObject.getString("telephoneClient"),
-                                            jsonObject.getString("adresseClient"),
-                                            jsonObject.getString("emailClient"));
-                                    Log.i(TAG, "onComplete: client => " + client.toString());
-                                    listeClients.add(client);
+                                    vehicule = new Vehicule(jsonObject.getString("immatriculation"),
+                                            jsonObject.getString("marque"),
+                                            jsonObject.getString("modele"),
+                                            jsonObject.getInt("prix"));
+                                            //jsonObject.getBoolean("location"));
+                                    Log.i(TAG, "onComplete: vehicule => " + vehicule.toString());
+                                    listeVehicules.add(vehicule);
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
-                                Log.i(TAG, "onCreate: listeClients => " + listeClients.toString());
-                                clientAdapter = new ClientAdapter(listeClients);
-                                recyclerView.setAdapter(clientAdapter);
+                                Log.i(TAG, "onCreate: listeVehicules => " + listeVehicules.toString());
+                                vehiculeAdapter = new VehiculeAdapter(listeVehicules);
+                                recyclerView.setAdapter(vehiculeAdapter);
 
-                                recyclerView.addOnItemTouchListener(ListeClient.this);
+                                recyclerView.addOnItemTouchListener(ListeVehicule.this);
 
 
                             }
@@ -114,11 +112,11 @@ public class ListeClient extends AppCompatActivity implements RecyclerView.OnIte
                     motionEvent.getY());
             if (child != null) {
                 position = recyclerView.getChildAdapterPosition(child);
-                Client client = (Client) listeClients.get(position);
+                Vehicule vehicule = (Vehicule) listeVehicules.get(position);
 
-                Intent intent = new Intent(this, ClientDetail.class);
-                intent.putExtra(ClientDetail.EXTRA_OBJET, Parcels.wrap(client));
-                intent.putExtra(ClientDetail.EXTRA_POSITION, position);
+                Intent intent = new Intent(this, VehiculeDetail.class);
+                intent.putExtra(VehiculeDetail.EXTRA_OBJET, Parcels.wrap(vehicule));
+                intent.putExtra(VehiculeDetail.EXTRA_POSITION, position);
                 startActivityForResult(intent, 123);
 
 
@@ -128,15 +126,4 @@ public class ListeClient extends AppCompatActivity implements RecyclerView.OnIte
         return false;
     }
 
-    public void clientSuivant(View view) {
-        Log.i(TAG, "clientSuivant: position => " + position);
-
-        position = position + 1;
-
-        client = (Client) listeClients.get(position);
-
-        Intent intent = new Intent(this, ClientDetail.class);
-        intent.putExtra(ClientDetail.EXTRA_OBJET, Parcels.wrap(client));
-        startActivityForResult(intent, 123);
-    }
 }
