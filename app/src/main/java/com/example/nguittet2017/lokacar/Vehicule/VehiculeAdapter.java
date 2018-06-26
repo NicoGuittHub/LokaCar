@@ -1,6 +1,7 @@
 package com.example.nguittet2017.lokacar.Vehicule;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import java.util.List;
 
 public class VehiculeAdapter extends RecyclerView.Adapter<VehiculeViewHolder>{
 
+    private static final String TAG = "kccImportbdd";
 
     private List<Vehicule> listeVehicules;
 
@@ -21,7 +23,8 @@ public class VehiculeAdapter extends RecyclerView.Adapter<VehiculeViewHolder>{
 
     @Override
     public VehiculeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View viewVehicule = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_liste_vehicule, parent, false);
+        Log.i(TAG, "onCreateViewHolder: " );
+        View viewVehicule = LayoutInflater.from(parent.getContext()).inflate(R.layout.liste_vehicules, parent, false);
         return new VehiculeViewHolder(viewVehicule);
     }
 
@@ -33,10 +36,10 @@ public class VehiculeAdapter extends RecyclerView.Adapter<VehiculeViewHolder>{
         holder.textViewVehiculePrix.setText(Integer.toString(listeVehicules.get(position).prix));
 
 
-        holder.textViewVehiculeLocation.setText("");
-        if (listeVehicules.get(position).location){
-            holder.textViewVehiculeLocation.setText("loué");
-        }
+        //holder.textViewVehiculeLocation.setText("");
+        //if (listeVehicules.get(position).location){
+           // holder.textViewVehiculeLocation.setText("loué");
+        //}
 
     }
 

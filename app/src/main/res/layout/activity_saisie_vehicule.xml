@@ -11,7 +11,7 @@
         android:layout_width="159dp"
         android:layout_height="26dp"
         android:layout_marginTop="16dp"
-        android:text="Saisie d'un véhicule"
+        android:hint="Saisie d'un véhicule"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="29dp" />
 
@@ -23,6 +23,7 @@
         android:layout_marginLeft="176dp"
         android:layout_marginStart="176dp"
         android:text="Ok"
+        android:onClick="valideVehicule"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/location"
         app:layout_constraintTop_toBottomOf="@+id/location"
@@ -44,7 +45,7 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="immatriculation"
+        android:hint="immatriculation"
         app:layout_constraintTop_toBottomOf="@+id/saisieVehicule"
         tools:layout_editor_absoluteX="29dp" />
 
@@ -55,7 +56,7 @@
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="marque"
+        android:hint="marque"
         app:layout_constraintTop_toBottomOf="@+id/immatriculation"
         tools:layout_editor_absoluteX="29dp" />
 
@@ -66,7 +67,7 @@
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="modèle"
+        android:hint="modèle"
         app:layout_constraintTop_toBottomOf="@+id/marque"
         tools:layout_editor_absoluteX="29dp" />
 
@@ -77,7 +78,7 @@
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="€"
+        android:hint="€"
         app:layout_constraintTop_toBottomOf="@+id/modele"
         tools:layout_editor_absoluteX="29dp" />
 

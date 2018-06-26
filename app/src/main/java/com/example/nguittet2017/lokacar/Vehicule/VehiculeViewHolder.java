@@ -18,11 +18,11 @@ public class VehiculeViewHolder extends RecyclerView.ViewHolder{
     public VehiculeViewHolder(View itemView)
     {
         super(itemView);
-        textViewVehiculeImmatriculation = itemView.findViewById(R.id.immatriculation);
-        textViewVehiculeMarque = itemView.findViewById(R.id.marque);
-        textViewVehiculeModele = itemView.findViewById(R.id.modele);
-        textViewVehiculePrix = itemView.findViewById(R.id.prix);
-        textViewVehiculeLocation = itemView.findViewById(R.id.location);
+        textViewVehiculeImmatriculation = itemView.findViewById(R.id.textViewVehiculeImmatriculation);
+        textViewVehiculeMarque = itemView.findViewById(R.id.textViewVehiculeMarque);
+        textViewVehiculeModele = itemView.findViewById(R.id.textViewVehiculeModele);
+        textViewVehiculePrix = itemView.findViewById(R.id.textViewVehiculePrix);
+        //textViewVehiculeLocation = itemView.findViewById(R.id.location);
     }
 
 
