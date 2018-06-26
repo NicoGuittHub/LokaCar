@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="@drawable/border"
+    >
+
+    <TextView
+        android:id="@+id/nomClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        />
+
+    <TextView
+        android:id="@+id/prenomClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginLeft="20dp"
+        />
+
+    <TextView
+        android:id="@+id/emailClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/MonStyle"
+        android:layout_marginRight="20dp"
+        />
+
+
+</FrameLayout>

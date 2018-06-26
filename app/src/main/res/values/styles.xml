@@ -7,5 +7,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="MonStyle" parent="AppTheme">
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:layout_gravity">right</item>
+    </style>
 
 </resources>
