@@ -9,6 +9,8 @@ import com.example.nguittet2017.lokacar.R;
 
 import java.util.List;
 
+//permet la liaison entre la liste des clients et l'affichage
+
 public class ClientAdapter extends RecyclerView.Adapter<ClientViewHolder> {
     // Liste d'objets métier :
     private List<Client> listeClients;
@@ -18,13 +20,15 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientViewHolder> {
         this.listeClients = listeClients;
     }
 
+    //crée la vue d'un client
     @Override
     public ClientViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View viewTruc = LayoutInflater.from(parent.getContext())
+        View viewClient = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.liste_des_clients, parent, false);
-        return new ClientViewHolder(viewTruc);
+        return new ClientViewHolder(viewClient);
     }
 
+    // met les données dans les cases
     @Override
     public void onBindViewHolder(ClientViewHolder holder, int position) {
         holder.textViewNomClient.setText(listeClients.get(position).getNomClient());
@@ -33,6 +37,7 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientViewHolder> {
 
     }
 
+    //compte le nombre de client
     @Override
     public int getItemCount() {
 

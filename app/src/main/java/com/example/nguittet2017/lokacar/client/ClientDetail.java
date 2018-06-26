@@ -14,6 +14,7 @@ import com.example.nguittet2017.lokacar.R;
 
 import org.parceler.Parcels;
 
+// crée une vue en détail d'un client.
 public class ClientDetail extends AppCompatActivity {
 
     public static final String EXTRA_OBJET = "Client";
@@ -26,8 +27,7 @@ public class ClientDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_detail);
 
-        position = getIntent().getIntExtra(EXTRA_POSITION);
-
+        // récupere le client a partir d'un clic sur le client dans la liste
         client = Parcels.unwrap(
                 getIntent().getParcelableExtra(EXTRA_OBJET));
 
@@ -44,17 +44,7 @@ public class ClientDetail extends AppCompatActivity {
         textViewdetailEmailClientTrouve.setText(client.getEmailClient());
 
     }
-    public void clientSuivant(View view) {
-        Log.i(TAG, "clientSuivant: position => " + position);
 
-        position = position + 1;
-
-        client = (Client) listeClients.get(position);
-
-        Intent intent = new Intent(this, ClientDetail.class);
-        intent.putExtra(ClientDetail.EXTRA_OBJET, Parcels.wrap(client));
-        startActivityForResult(intent, 123);
-    }
 
 }
 

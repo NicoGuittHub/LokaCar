@@ -4,6 +4,8 @@ import android.net.Uri;
 
 import org.parceler.Parcel;
 
+//objet client parcelable pour tranfert entre activity
+
 @Parcel
 public class Client {
 

@@ -1,0 +1,3 @@
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-path name="les_permis" path="Android/data/com.example.nguittet2017.lokacar/files/Pictures" />
+</paths>

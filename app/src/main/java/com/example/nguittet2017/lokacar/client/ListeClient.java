@@ -27,9 +27,10 @@ import org.parceler.Parcels;
 import java.util.ArrayList;
 import java.util.List;
 
+//genere la liste des clients
 public class ListeClient extends AppCompatActivity implements RecyclerView.OnItemTouchListener {
 
-    private static final String TAG = "kccImportbdd";
+    private static final String TAG = "listeClient";
 
     public GestureDetector gestureDetector;
     public List<Client> listeClients = new ArrayList<>();
@@ -42,7 +43,6 @@ public class ListeClient extends AppCompatActivity implements RecyclerView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_client);
-        Log.i(TAG, "onCreate: ");
 
         recyclerView = (RecyclerView) findViewById(R.id.liste_des_clients);
         recyclerView.setHasFixedSize(true);
@@ -67,12 +67,10 @@ public class ListeClient extends AppCompatActivity implements RecyclerView.OnIte
                                             jsonObject.getString("telephoneClient"),
                                             jsonObject.getString("adresseClient"),
                                             jsonObject.getString("emailClient"));
-                                    Log.i(TAG, "onComplete: client => " + client.toString());
                                     listeClients.add(client);
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
-                                Log.i(TAG, "onCreate: listeClients => " + listeClients.toString());
                                 clientAdapter = new ClientAdapter(listeClients);
                                 recyclerView.setAdapter(clientAdapter);
 
@@ -120,7 +118,6 @@ public class ListeClient extends AppCompatActivity implements RecyclerView.OnIte
                 intent.putExtra(ClientDetail.EXTRA_OBJET, Parcels.wrap(client));
                 intent.putExtra(ClientDetail.EXTRA_POSITION, position);
                 startActivityForResult(intent, 123);
-
 
                 return true;
             }
