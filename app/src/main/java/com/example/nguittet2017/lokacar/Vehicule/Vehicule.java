@@ -2,20 +2,30 @@ package com.example.nguittet2017.lokacar.Vehicule;
 
 import android.net.Uri;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Vehicule {
 
-    private String immatriculation;
-    private String marque;
-    private String modele;
-    private double prix;
-    private Uri photo;
-    private boolean location;
+    public String immatriculation;
+    public String marque;
+    public String modele;
+    public Integer prix;
+    public Uri photo;
+    public boolean location;
 
     public Vehicule(){
 
     };
 
-    public Vehicule(String immatriculation, String marque, String modele, double prix, Uri photo, boolean location) {
+    public Vehicule(String immatriculation, String marque, String modele, Integer prix) {
+        this.immatriculation = immatriculation;
+        this.marque = marque;
+        this.modele = modele;
+        this.prix = prix;
+    }
+
+    public Vehicule(String immatriculation, String marque, String modele, Integer prix, Uri photo, boolean location) {
         this.immatriculation = immatriculation;
         this.marque = marque;
         this.modele = modele;
@@ -24,7 +34,7 @@ public class Vehicule {
         this.location = location;
     }
 
-    public Vehicule(String immatriculation, String marque, String modele, double prix, boolean location) {
+    public Vehicule(String immatriculation, String marque, String modele, Integer prix, boolean location) {
         this.immatriculation = immatriculation;
         this.marque = marque;
         this.modele = modele;
@@ -56,11 +66,11 @@ public class Vehicule {
         this.modele = modele;
     }
 
-    public double getPrix() {
+    public Integer getPrix() {
         return prix;
     }
 
-    public void setPrix(double prix) {
+    public void setPrix(Integer prix) {
         this.prix = prix;
     }
 

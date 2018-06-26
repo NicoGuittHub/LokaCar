@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewDetailImmatriculation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="immatriculation"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetail"
+        tools:layout_editor_absoluteX="48dp" />
+
+    <TextView
+        android:id="@+id/textViewDetailMarque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Marque"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailImmatriculation"
+        tools:layout_editor_absoluteX="48dp" />
+
+    <TextView
+        android:id="@+id/textViewDetailModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Modele"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailMarque"
+        tools:layout_editor_absoluteX="48dp" />
+
+    <TextView
+        android:id="@+id/textViewDetailPrix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Prix"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailModel"
+        tools:layout_editor_absoluteX="57dp" />
+
+    <TextView
+        android:id="@+id/textViewDetailLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Location"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailPrix"
+        tools:layout_editor_absoluteX="48dp" />
+
+    <TextView
+        android:id="@+id/textViewDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Detail véhicule"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="37dp" />
+</android.support.constraint.ConstraintLayout>

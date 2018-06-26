@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".client.SaisieClient" />
         <activity android:name=".Vehicule.SaisieVehicule" />
+        <activity android:name=".Vehicule.ListeVehicule"/>
+        <activity android:name=".Vehicule.VehiculeDetail"/>
         <activity android:name=".client.ListeClient" />
         <activity android:name=".client.ClientDetail" />
 
@@ -37,6 +39,8 @@
             android:resource="@xml/file_paths"></meta-data>
     </provider>
 
+        <activity android:name=".client.ClientDetail" />
+        <activity android:name=".client.PhotoPermis"/>
     </application>
 
 </manifest>

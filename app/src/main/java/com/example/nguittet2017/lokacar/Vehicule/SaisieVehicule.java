@@ -34,7 +34,7 @@ public class SaisieVehicule extends AppCompatActivity {
 
     }
 
-    public void locationVehicule(View view) {
+    public void valideVehicule(View view) {
         FirebaseFirestore dbVehicule = FirebaseFirestore.getInstance();
 
         final TextView textViewImmatriculation = findViewById(R.id.immatriculation);
@@ -43,17 +43,12 @@ public class SaisieVehicule extends AppCompatActivity {
         TextView textViewPrix = findViewById(R.id.prix);
         TextView textViewLocation = findViewById(R.id.location);
 
-
-
         final Map<String, Object> vehicule = new HashMap<>();
         vehicule.put("immatriculation", textViewImmatriculation.getText().toString());
         vehicule.put("marque", textViewMarque.getText().toString());
         vehicule.put("modele", textViewModele.getText().toString());
         vehicule.put("prix", textViewPrix.getText().toString());
         vehicule.put("location",textViewLocation.getText().toString());
-
-
-
         dbVehicule.collection("vehicules")
                 .add(vehicule)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -73,5 +68,8 @@ public class SaisieVehicule extends AppCompatActivity {
                 });
 
 
+
     }
+
+
 }

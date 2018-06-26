@@ -5,7 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.nguittet2017.lokacar.client.ListeClient;
+import com.example.nguittet2017.lokacar.Vehicule.ListeVehicule;
+import com.example.nguittet2017.lokacar.Vehicule.SaisieVehicule;
 import com.example.nguittet2017.lokacar.client.SaisieClient;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,10 +23,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void listeClient(View view) {
-
-        Intent intent = new Intent(this, ListeClient.class);
+   public void saisieVehicule(View view){
+        Intent intent = new Intent(this, SaisieVehicule.class);
         startActivity(intent);
+   }
 
-    }
+   public void listeVehicules (View view){
+       Intent intent = new Intent(this, ListeVehicule.class);
+       startActivity(intent);
+
+   }
 }
