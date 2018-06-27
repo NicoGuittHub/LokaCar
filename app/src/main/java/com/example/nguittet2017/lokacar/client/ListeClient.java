@@ -8,12 +8,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.GestureDetector;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.nguittet2017.lokacar.MainActivity;
 import com.example.nguittet2017.lokacar.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -62,11 +59,16 @@ public class ListeClient extends AppCompatActivity implements RecyclerView.OnIte
                             for (DocumentSnapshot document : task.getResult()) {
                                 try {
                                     JSONObject jsonObject = new JSONObject(document.getData());
+                                    Log.i(TAG, "onComplete: json => " + jsonObject);
                                     client = new Client(jsonObject.getString("nomClient"),
                                             jsonObject.getString("prenomClient"),
                                             jsonObject.getString("telephoneClient"),
                                             jsonObject.getString("adresseClient"),
-                                            jsonObject.getString("emailClient"));
+                                            jsonObject.getString("emailClient"),
+                                            jsonObject.getString("photoAssurance"),
+                                            jsonObject.getString("photopermis"));
+
+
                                     listeClients.add(client);
                                 } catch (Exception e) {
                                     e.printStackTrace();
@@ -114,9 +116,9 @@ public class ListeClient extends AppCompatActivity implements RecyclerView.OnIte
                 position = recyclerView.getChildAdapterPosition(child);
                 Client client = (Client) listeClients.get(position);
 
-                Intent intent = new Intent(this, ClientDetail.class);
-                intent.putExtra(ClientDetail.EXTRA_OBJET, Parcels.wrap(client));
-                intent.putExtra(ClientDetail.EXTRA_POSITION, position);
+                Intent intent = new Intent(this, DetailClient.class);
+                intent.putExtra(DetailClient.EXTRA_OBJET, Parcels.wrap(client));
+                intent.putExtra(DetailClient.EXTRA_POSITION, position);
                 startActivityForResult(intent, 123);
 
                 return true;
@@ -132,8 +134,8 @@ public class ListeClient extends AppCompatActivity implements RecyclerView.OnIte
 
         client = (Client) listeClients.get(position);
 
-        Intent intent = new Intent(this, ClientDetail.class);
-        intent.putExtra(ClientDetail.EXTRA_OBJET, Parcels.wrap(client));
+        Intent intent = new Intent(this, DetailClient.class);
+        intent.putExtra(DetailClient.EXTRA_OBJET, Parcels.wrap(client));
         startActivityForResult(intent, 123);
     }
 }

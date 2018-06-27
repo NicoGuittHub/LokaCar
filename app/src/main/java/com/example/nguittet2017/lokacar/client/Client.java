@@ -14,28 +14,36 @@ public class Client {
     public String telephoneClient;
     public String adresseClient;
     public String emailClient;
-    public Uri carteIdentiteClient;
-    public Uri permisClient;
+    public String photoAssuranceClient;
+    public String photoPermisClient;
+
 
     public Client() {
     }
 
-    public Client(String nomClient, String prenomClient, String telephoneClient, String adresseClient, String emailClient) {
+    public Client(String nomClient, String prenomClient, String telephoneClient,
+                  String adresseClient, String emailClient,
+                  String photoAssuranceClient, String photoPermisClient) {
         this.nomClient = nomClient;
         this.prenomClient = prenomClient;
         this.telephoneClient = telephoneClient;
         this.adresseClient = adresseClient;
         this.emailClient = emailClient;
+        this.photoAssuranceClient = photoAssuranceClient;
+        this.photoPermisClient = photoPermisClient;
     }
 
-    public Client(String nomClient, String prenomClient, String telephoneClient, String adresseClient, String emailClient, Uri carteIdentiteClient, Uri permisClient) {
-        this.nomClient = nomClient;
-        this.prenomClient = prenomClient;
-        this.telephoneClient = telephoneClient;
-        this.adresseClient = adresseClient;
-        this.emailClient = emailClient;
-        this.carteIdentiteClient = carteIdentiteClient;
-        this.permisClient = permisClient;
+    @Override
+    public String toString() {
+        return "Client{" +
+                "nomClient='" + nomClient + '\'' +
+                ", prenomClient='" + prenomClient + '\'' +
+                ", telephoneClient='" + telephoneClient + '\'' +
+                ", adresseClient='" + adresseClient + '\'' +
+                ", emailClient='" + emailClient + '\'' +
+                ", photoAssuranceClient='" + photoAssuranceClient + '\'' +
+                ", photoPermisClient='" + photoPermisClient + '\'' +
+                '}';
     }
 
     public String getNomClient() {
@@ -78,30 +86,19 @@ public class Client {
         this.emailClient = emailClient;
     }
 
-    public Uri getCarteIdentiteClient() {
-        return carteIdentiteClient;
+    public String getPhotoAssuranceClient() {
+        return photoAssuranceClient;
     }
 
-    public void setCarteIdentiteClient(Uri carteIdentiteClient) {
-        this.carteIdentiteClient = carteIdentiteClient;
+    public void setPhotoAssuranceClient(String photoAssuranceClient) {
+        this.photoAssuranceClient = photoAssuranceClient;
     }
 
-    public Uri getPermisClient() {
-        return permisClient;
+    public String getPhotoPermisClient() {
+        return photoPermisClient;
     }
 
-    public void setPermisClient(Uri permisClient) {
-        this.permisClient = permisClient;
-    }
-
-    @Override
-    public String toString() {
-        return "Client{" +
-                "nomClient='" + nomClient + '\'' +
-                ", prenomClient='" + prenomClient + '\'' +
-                ", telephoneClient='" + telephoneClient + '\'' +
-                ", adresseClient='" + adresseClient + '\'' +
-                ", emailClient='" + emailClient + '\'' +
-                '}';
+    public void setPhotoPermisClient(String photoPermisClient) {
+        this.photoPermisClient = photoPermisClient;
     }
 }
