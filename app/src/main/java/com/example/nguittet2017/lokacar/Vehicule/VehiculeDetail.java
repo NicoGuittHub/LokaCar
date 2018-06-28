@@ -2,6 +2,7 @@ package com.example.nguittet2017.lokacar.Vehicule;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.nguittet2017.lokacar.R;
@@ -23,17 +24,16 @@ public class VehiculeDetail extends AppCompatActivity {
 
         vehicule = Parcels.unwrap(getIntent().getParcelableExtra(EXTRA_OBJET));
 
-        TextView textViewDetailImmat = findViewById(R.id.textViewDetailImmatriculation);
-        TextView textViewDetailMa = findViewById(R.id.textViewDetailMarque);
-        TextView textViewDetailMo = findViewById(R.id.textViewDetailModel);
-        TextView textViewDetailPx = findViewById(R.id.textViewDetailPrix);
-        TextView textViewDetailLoc = findViewById(R.id.textViewDetailLocation);
+        TextView textViewDetailImmat = findViewById(R.id.textViewImmatRetour);
+        TextView textViewDetailMa = findViewById(R.id.textViewMarqueRetour);
+        TextView textViewDetailMo = findViewById(R.id.textViewModeleRetour);
+        TextView textViewDetailPx = findViewById(R.id.textViewPrixRetour);
+        //TextView textViewDetailLoc = findViewById(R.id.textViewLocationRetour);
 
         textViewDetailImmat.setText(vehicule.getImmatriculation());
         textViewDetailMa.setText(vehicule.getMarque());
         textViewDetailMo.setText(vehicule.getModele());
-        textViewDetailPx.setText(vehicule.getPrix());
-        //textViewDetailLoc.setText(vehicule.getLocation);
+        textViewDetailPx.setText(Integer.toString(vehicule.getPrix()));
 
     }
 

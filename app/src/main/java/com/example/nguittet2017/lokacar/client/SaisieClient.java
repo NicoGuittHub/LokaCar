@@ -60,6 +60,9 @@ public class SaisieClient extends AppCompatActivity {
         buttonValide.setEnabled(false);
         buttonValide.setOnClickListener(mCorkyListener);
 
+        Log.i(TAG, "onCreate: debut");
+
+
     }
 
     public void valideClient(View view) {
@@ -162,6 +165,7 @@ public class SaisieClient extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_TAKE_PHOTO_PERMIS && resultCode == RESULT_OK) {
             buttonPermis.setEnabled(false);
+            Log.i(TAG, "onActivityResult: photo");
             if (!buttonPermis.isEnabled()) {
                 buttonValide.setEnabled(true);
             }
@@ -169,7 +173,8 @@ public class SaisieClient extends AppCompatActivity {
         }
         if (requestCode == REQUEST_TAKE_PHOTO_ASSURANCE && resultCode == RESULT_OK) {
             buttonAssurance.setEnabled(false);
-            if (!buttonPermis.isEnabled()) {
+            Log.i(TAG, "onActivityResult: assurance");
+            if (!buttonAssurance.isEnabled() && !buttonPermis.isEnabled()) {
                 buttonValide.setEnabled(true);
             }
         }
@@ -187,7 +192,9 @@ public class SaisieClient extends AppCompatActivity {
             boolean isPermis = view.getId() == R.id.saisiePermis;
             boolean isValid = view.getId() == R.id.valid;
 
+            Log.i(TAG, "onClick: ");
             if (isAssur || isPermis) {
+                Log.i(TAG, "onClick: assur" + isAssur);
                 Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
 
@@ -206,6 +213,7 @@ public class SaisieClient extends AppCompatActivity {
                     }
                 }
             } else if (isValid) {
+                Log.i(TAG, "onClick: valid");
                 valideClient(view);
             }
 

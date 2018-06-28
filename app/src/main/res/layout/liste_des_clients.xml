@@ -9,8 +9,7 @@
         android:id="@+id/nomClient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/MonStyle"
-        android:layout_gravity="center|top"
+        android:layout_marginLeft="20dp"
         />
 
     <TextView
@@ -18,15 +17,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|left"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         />
 
     <TextView
         android:id="@+id/emailClient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|right"
-        android:layout_marginRight="10dp"
+        style="@style/MonStyle"
+        android:layout_marginRight="20dp"
         />
 
 
