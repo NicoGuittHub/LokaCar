@@ -10,46 +10,45 @@
         android:id="@+id/textViewDetailImmatriculation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginRight="152dp"
+        android:layout_marginTop="44dp"
         android:text="immatriculation"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDetail"
-        tools:layout_editor_absoluteX="48dp" />
+        app:layout_constraintEnd_toStartOf="@+id/textViewImmatRetour"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetail" />
 
     <TextView
         android:id="@+id/textViewDetailMarque"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginRight="200dp"
+        android:layout_marginTop="28dp"
         android:text="Marque"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDetailImmatriculation"
-        tools:layout_editor_absoluteX="48dp" />
+        app:layout_constraintEnd_toStartOf="@+id/textViewMarqueRetour"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailImmatriculation" />
 
     <TextView
         android:id="@+id/textViewDetailModel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginRight="200dp"
+        android:layout_marginTop="36dp"
         android:text="Modele"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDetailMarque"
-        tools:layout_editor_absoluteX="48dp" />
+        app:layout_constraintEnd_toStartOf="@+id/textViewModeleRetour"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailMarque" />
 
     <TextView
         android:id="@+id/textViewDetailPrix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginEnd="220dp"
+        android:layout_marginRight="220dp"
+        android:layout_marginTop="40dp"
         android:text="Prix"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDetailModel"
-        tools:layout_editor_absoluteX="57dp" />
-
-    <TextView
-        android:id="@+id/textViewDetailLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Location"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDetailPrix"
-        tools:layout_editor_absoluteX="48dp" />
+        app:layout_constraintEnd_toStartOf="@+id/textViewPrixRetour"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailModel" />
 
     <TextView
         android:id="@+id/textViewDetail"
@@ -59,4 +58,57 @@
         android:text="Detail véhicule"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="37dp" />
+
+    <TextView
+        android:id="@+id/textViewImmatRetour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="44dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetail" />
+
+    <TextView
+        android:id="@+id/textViewMarqueRetour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="28dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewImmatRetour" />
+
+    <TextView
+        android:id="@+id/textViewModeleRetour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="36dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMarqueRetour" />
+
+    <TextView
+        android:id="@+id/textViewPrixRetour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="44dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewModeleRetour" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="337dp" />
+
+
 </android.support.constraint.ConstraintLayout>

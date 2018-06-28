@@ -125,15 +125,5 @@ public class ListeClient extends AppCompatActivity implements RecyclerView.OnIte
         return false;
     }
 
-    public void clientSuivant(View view) {
-        Log.i(TAG, "clientSuivant: position => " + position);
 
-        position = position + 1;
-
-        client = (Client) listeClients.get(position);
-
-        Intent intent = new Intent(this, ClientDetail.class);
-        intent.putExtra(ClientDetail.EXTRA_OBJET, Parcels.wrap(client));
-        startActivityForResult(intent, 123);
-    }
 }

@@ -166,7 +166,7 @@ public class SaisieClient extends AppCompatActivity {
         if (requestCode == REQUEST_TAKE_PHOTO_PERMIS && resultCode == RESULT_OK) {
             buttonPermis.setEnabled(false);
             Log.i(TAG, "onActivityResult: photo");
-            if (!buttonAssurance.isEnabled() && !buttonPermis.isEnabled()) {
+            if (!buttonPermis.isEnabled()) {
                 buttonValide.setEnabled(true);
             }
 
